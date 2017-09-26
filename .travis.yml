@@ -1,0 +1,5 @@
+language: java
+
+notifications:
+  email: scottx611x@gmail.com
+  on_success: never
