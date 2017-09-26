@@ -1,1 +1,1 @@
-# csci-e71-mob-refactoring [![Build Status](https://travis-ci.org/scottx611x/csci-e71-mob-refactoring.svg?branch=master)](https://travis-ci.org/scottx611x/csci-e71-mob-refactoring)
+# csci-e71-mob-refactoring [![Build Status](https://travis-ci.org/scottx611x/csci-e71-mob-refactoring.svg?branch=master)](https://travis-ci.org/scottx611x/csci-e71-mob-refactoring) [![codecov](https://codecov.io/gh/scottx611x/csci-e71-mob-refactoring/branch/master/graph/badge.svg)](https://codecov.io/gh/scottx611x/csci-e71-mob-refactoring)
