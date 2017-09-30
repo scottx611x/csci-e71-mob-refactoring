@@ -76,6 +76,30 @@ public class GildedRoseTest {
         testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 19, 11);
     }
 
+    @Test
+    public void backstagePassesIncreasesQualityBy2LessThan10Days() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 9, 12);
+    }
+
+    @Test
+    public void backstagePassesIncreasesQualityBy3LessThan5Days() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 3, 13);
+    }
+
+    @Test
+    public void backstagePasses0QualityAfterConcert() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", -1, 0);
+    }
+
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {
         assertEquals(expectedName, item.name);
         assertEquals(expectedSellIn, item.sellIn);
