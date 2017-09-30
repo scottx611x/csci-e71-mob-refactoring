@@ -9,36 +9,35 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            boolean isConjured = items[i].name.toLowerCase().contains("Conjured");
 
-            boolean isAgedBrie = items[i].name.toLowerCase().contains("Aged Brie");
-            boolean isBackstagePass = items[i].name.toLowerCase().contains("Backstage passes");
-            boolean isSulfuras = items[i].name.toLowerCase().contains("Sulfuras");
 
             int sellIn = items[i].sellIn;
+            
+            int quality = computeQuality(items[i].name,items[i].sellIn,items[i].quality);
+            
 
-//            int qualityChange = 0;
-//
-//            if (isAgedBrie) {
-//
-//            }
-//            else if (isBackstagePass) {
-//                if (sellIn < 11) {
-//                    qualityChange = -2;
-//                }
-//                else if (sellIn < 6) {
-//                    qualityChange = -3;
-//                }
-//                else if (sellIn < 0){
-//                    qualityChange
-//                }
-//            }
-//            else if (isSulfuras) {
-//                qualityChange = 0;
-//            }
-//            else {
-//                qualityChange = -1;
-//            }
+            int qualityChange = 0;
+
+            if (isAgedBrie) {
+
+            }
+            else if (isBackstagePass) {
+                if (sellIn < 11) {
+                    qualityChange = -2;
+                }
+                else if (sellIn < 6) {
+                    qualityChange = -3;
+                }
+                else if (sellIn < 0){
+                    qualityChange
+                }
+            }
+            else if (isSulfuras) {
+                qualityChange = 0;
+            }
+            else {
+                qualityChange = -1;
+            }
 
 
 
@@ -102,5 +101,48 @@ class GildedRose {
                 }
             }
         }
+    }
+    
+    public int computeQuality (String name, int sellIn, int quality){
+
+        boolean isConjured = items[i].name.toLowerCase().contains("Conjured");
+
+        boolean isAgedBrie = items[i].name.toLowerCase().contains("Aged Brie");
+        boolean isBackstagePass = items[i].name.toLowerCase().contains("Backstage passes");
+        boolean isSulfuras = items[i].name.toLowerCase().contains("Sulfuras");
+
+        int qualityChange = 0;
+
+            if (isAgedBrie) {
+                    if (sellIn < 0) {
+                    qualityChange = +2;
+                } else {
+                    qualityChange = +1;
+                }
+
+            }
+            else if (isBackstagePass) {
+                if (sellIn < 11) {
+                    qualityChange = +2;
+                }
+                else if (sellIn < 6) {
+                    qualityChange = +3;
+                }
+                else if (sellIn < 0){
+                    qualityChange = -1 * quality;
+                } else
+                {
+                    qualityChange = +1;
+                }
+            }
+            else if (isSulfuras) {
+                qualityChange = 0;
+            }
+            else {
+                qualityChange = -1;
+            }
+        
+        return 0;
+        
     }
 }
