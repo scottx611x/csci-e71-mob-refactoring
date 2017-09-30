@@ -113,6 +113,14 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         testItem(items[0], "Sulfuras, Hand of Ragnaros", -1, 10);
+}
+
+    @Test
+    public void ConjuredItems() {
+        Item[] items = new Item[] { new Item("Conjured", 10, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Conjured", 9, 10);
     }
 
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {
