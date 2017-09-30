@@ -100,6 +100,14 @@ public class GildedRoseTest {
         testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", -1, 0);
     }
 
+    @Test
+    public void backstagePassesWithQuality50DontIncrease() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 51) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 4, 51);
+    }
+
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {
         assertEquals(expectedName, item.name);
         assertEquals(expectedSellIn, item.sellIn);
