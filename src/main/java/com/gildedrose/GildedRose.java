@@ -9,6 +9,46 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
+            boolean isConjured = items[i].name.toLowerCase().contains("Conjured");
+
+            boolean isAgedBrie = items[i].name.toLowerCase().contains("Aged Brie");
+            boolean isBackstagePass = items[i].name.toLowerCase().contains("Backstage passes");
+            boolean isSulfuras = items[i].name.toLowerCase().contains("Sulfuras");
+
+            int sellIn = items[i].sellIn;
+
+//            int qualityChange = 0;
+//
+//            if (isAgedBrie) {
+//
+//            }
+//            else if (isBackstagePass) {
+//                if (sellIn < 11) {
+//                    qualityChange = -2;
+//                }
+//                else if (sellIn < 6) {
+//                    qualityChange = -3;
+//                }
+//                else if (sellIn < 0){
+//                    qualityChange
+//                }
+//            }
+//            else if (isSulfuras) {
+//                qualityChange = 0;
+//            }
+//            else {
+//                qualityChange = -1;
+//            }
+
+
+
+
+            items[i].quality = Math.min(items[i].quality, 50);
+            items[i].quality = Math.max(items[i].quality, 0);
+
+
+
+
             if (!items[i].name.contains().equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (items[i].quality > 0) {
