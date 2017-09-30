@@ -108,7 +108,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void unk() {
+    public void sulfurasDoesntdegradepastsellin() {
         Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -120,7 +120,7 @@ public class GildedRoseTest {
         Item[] items = new Item[] { new Item("Conjured", 10, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        testItem(items[0], "Conjured", 9, 10);
+        testItem(items[0], "Conjured", 9, 8);
     }
 
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {
