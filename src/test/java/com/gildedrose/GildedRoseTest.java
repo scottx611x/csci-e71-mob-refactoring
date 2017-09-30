@@ -104,7 +104,7 @@ public class GildedRoseTest {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 51) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 4, 51);
+        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 4, 50);
     }
 
     @Test
@@ -121,6 +121,22 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         testItem(items[0], "Conjured", 9, 8);
+    }
+
+    @Test
+    public void backstagePassesIncreasesQualityBy2LessThan10DaysConjured() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert - Conjured", 10, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert - Conjured", 9, 12);
+    }
+
+    @Test
+    public void fooPastSellInDegradesBy2Conjured() {
+        Item[] items = new Item[] { new Item("foo - Conjured", 0, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "foo - Conjured", -1, 6);
     }
 
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {
