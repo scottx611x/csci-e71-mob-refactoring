@@ -57,7 +57,6 @@ public class GildedRoseTest {
         testItem(items[0], "Aged Brie", -1, 50);
         app.updateQuality();
         testItem(items[0], "Aged Brie", -2, 50);
-
     }
 
     @Test
