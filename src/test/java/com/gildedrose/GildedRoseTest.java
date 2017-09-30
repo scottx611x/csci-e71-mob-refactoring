@@ -101,14 +101,14 @@ public class GildedRoseTest {
 
     @Test
     public void backstagePassesWithQuality50DontIncrease() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 51) };
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 4, 50);
     }
 
     @Test
-    public void sulfurasDoesntdegradepastsellin() {
+    public void sulfurasDoesntDegradePastSellIn() {
         Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -116,7 +116,7 @@ public class GildedRoseTest {
 }
 
     @Test
-    public void ConjuredItems() {
+    public void conjuredItemsDegrade2x() {
         Item[] items = new Item[] { new Item("Conjured", 10, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -125,18 +125,18 @@ public class GildedRoseTest {
 
     @Test
     public void backstagePassesIncreasesQualityBy2LessThan10DaysConjured() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert - Conjured", 10, 10) };
+        Item[] items = new Item[] { new Item("Conjured backstage passes to a TAFKAL80ETC concert", 10, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        testItem(items[0], "Backstage passes to a TAFKAL80ETC concert - Conjured", 9, 12);
+        testItem(items[0], "Conjured backstage passes to a TAFKAL80ETC concert", 9, 12);
     }
 
     @Test
     public void fooPastSellInDegradesBy2Conjured() {
-        Item[] items = new Item[] { new Item("foo - Conjured", 0, 10) };
+        Item[] items = new Item[] { new Item("Conjured foo", 0, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        testItem(items[0], "foo - Conjured", -1, 6);
+        testItem(items[0], "Conjured foo", -1, 6);
     }
 
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {

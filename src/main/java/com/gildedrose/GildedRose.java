@@ -13,12 +13,15 @@ class GildedRose {
 
             items[i].quality = computeQuality(items[i].name, items[i].sellIn, items[i].quality);
 
-            items[i].sellIn -= 1;
+            boolean isSulfuras = items[i].name.toLowerCase().contains("sulfuras");
+            if (!isSulfuras) {
+                items[i].sellIn -= 1;
+            }
         }
     }
     
     public int computeQuality (String name, int sellIn, int quality) {
-        boolean isConjured = name.toLowerCase().contains("conjured");
+        boolean isConjured = name.toLowerCase().startsWith("conjured");
         boolean isAgedBrie = name.toLowerCase().contains("aged brie");
         boolean isBackstagePass = name.toLowerCase().contains("backstage passes");
         boolean isSulfuras = name.toLowerCase().contains("sulfuras");
@@ -36,16 +39,16 @@ class GildedRose {
             }
         }
         else if (isBackstagePass) {
-            if (sellIn < 11) {
-                qualityChange = +2;
+            if (sellIn <= 0){
+                qualityChange = -1 * quality;
             }
             else if (sellIn < 6) {
                 qualityChange = +3;
             }
-            else if (sellIn < 0){
-                qualityChange = -1 * quality;
-            } else
-            {
+            else if (sellIn < 11) {
+                qualityChange = +2;
+            }
+            else {
                 qualityChange = +1;
             }
         }
