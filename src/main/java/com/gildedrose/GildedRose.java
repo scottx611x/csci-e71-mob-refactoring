@@ -115,9 +115,9 @@ class GildedRose {
 
             if (isAgedBrie) {
                     if (sellIn < 0) {
-                    qualityChange = +2;
-                } else {
-                    qualityChange = +1;
+                            qualityChange = +2;
+                        } else {
+                            qualityChange = +1;
                 }
 
             }
@@ -139,9 +139,17 @@ class GildedRose {
                 qualityChange = 0;
             }
             else {
-                qualityChange = -1;
+                if (sellIn < 0) {
+                    qualityChange = -2;
+                } else {
+                    qualityChange = -1;
+                }
             }
-        
+            if(isConjured && qualityChange < 0){
+
+                qualityChange = qualityChange * 2;
+            }
+        if !isSulfuras
         return 0;
         
     }
