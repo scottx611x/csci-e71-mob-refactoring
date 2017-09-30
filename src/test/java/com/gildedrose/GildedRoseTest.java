@@ -107,6 +107,14 @@ public class GildedRoseTest {
         testItem(items[0], "Backstage passes to a TAFKAL80ETC concert", 4, 51);
     }
 
+    @Test
+    public void unk() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        testItem(items[0], "Sulfuras, Hand of Ragnaros", -1, 10);
+    }
+
     void testItem(Item item, String expectedName, int expectedSellIn, int expectedQuality) {
         assertEquals(expectedName, item.name);
         assertEquals(expectedSellIn, item.sellIn);
