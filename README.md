@@ -1,6 +1,6 @@
 # csci-e71-mob-refactoring [![Build Status](https://travis-ci.org/scottx611x/csci-e71-mob-refactoring.svg?branch=master)](https://travis-ci.org/scottx611x/csci-e71-mob-refactoring) [![codecov](https://codecov.io/gh/scottx611x/csci-e71-mob-refactoring/branch/master/graph/badge.svg)](https://codecov.io/gh/scottx611x/csci-e71-mob-refactoring)
 
-[Mob Programming Video link](https://youtu.be/UqYaftv_d94)
+[Mob Programming Video link](https://photos.app.goo.gl/SFpIqgjfMOmwRSaR2)
 
 ### Solution Statement:
 We used [GoToMeeting](https://www.gotomeeting.com/) for our mob programming solution.  The GoToMeeting software allowed us to share desktops and simulate the mob programming experience we had in class.  GitHub was used to share code, and we pushed/pulled our code whenever we changed drivers.
